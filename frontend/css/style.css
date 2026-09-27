@@ -1,0 +1,22 @@
+/* Your custom styles go here.
+   Use Bootstrap classes first, and write your own CSS only when you need to. */
+
+.navbar h1 {
+   color: whitesmoke;
+   padding: 0 20px;
+}
+
+.highlights {
+   display: flex;
+   margin-top: 20px;
+   justify-content: space-around;
+}
+
+.highlights > div {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   font-size: 1rem;
+}
