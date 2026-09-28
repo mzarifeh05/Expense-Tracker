@@ -1,8 +1,6 @@
-// Expense Tracker - frontend logic
 
 const API_URL = "http://localhost:3000/api/expenses";
 
-// Bootstrap badge class per category, so it's easy to see the category at a glance.
 const categoryBadgeClass = {
   Food: "bg-success",
   Transport: "bg-primary",
@@ -11,11 +9,8 @@ const categoryBadgeClass = {
   Other: "bg-secondary"
 };
 
-// Holds the full list returned by the API, so the category filter can
-// re-render without a network round trip.
 let allExpenses = [];
 
-// Elements
 const expenseForm = document.getElementById("expenseForm");
 const expenseIdInput = document.getElementById("expenseId");
 const titleInput = document.getElementById("title");
@@ -35,7 +30,6 @@ const summaryCount = document.getElementById("summaryCount");
 const summaryHighest = document.getElementById("summaryHighest");
 const summaryHighestTitle = document.getElementById("summaryHighestTitle");
 
-// --- API calls ---
 
 async function getExpenses() {
   const response = await fetch(API_URL);
@@ -160,7 +154,6 @@ function showTableLoading() {
   `;
 }
 
-// --- Filtering ---
 
 function applyFilter() {
   const selected = categoryFilter.value;
@@ -172,7 +165,6 @@ function applyFilter() {
   renderTable(filtered);
 }
 
-// --- Refresh (single source of truth: always re-fetch from the server) ---
 
 async function refresh() {
   showTableLoading();
@@ -187,7 +179,6 @@ async function refresh() {
   }
 }
 
-// --- Form handling ---
 
 function setSubmitting(isSubmitting) {
   submitBtn.disabled = isSubmitting;
@@ -277,6 +268,5 @@ expensesBody.addEventListener("click", async (event) => {
   }
 });
 
-// --- Init ---
 
 refresh();
