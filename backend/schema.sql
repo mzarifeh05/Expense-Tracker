@@ -1,7 +1,3 @@
--- Expense Tracker: database schema
--- Run this file once to create the table and add some sample data.
--- Running it again deletes the table and starts from the sample data.
-
 DROP TABLE IF EXISTS expenses;
 
 CREATE TABLE expenses (
